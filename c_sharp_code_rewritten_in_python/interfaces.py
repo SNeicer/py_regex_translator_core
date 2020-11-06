@@ -16,3 +16,21 @@ class IFileTransformer(ABC):
     @abstractmethod
     def transform(self, source_path: str, target_path: str) -> None:
         pass
+
+
+class ISubstitutionRule(ABC):
+
+    @property
+    @abstractmethod
+    def match_pattern(self) -> str:
+        pass
+
+    @property
+    @abstractmethod
+    def substitution_pattern(self) -> str:
+        pass
+
+    @property
+    @abstractmethod
+    def maximum_repeat_count(self) -> int:
+        pass
