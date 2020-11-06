@@ -34,3 +34,10 @@ class ISubstitutionRule(ABC):
     @abstractmethod
     def maximum_repeat_count(self) -> int:
         pass
+
+
+class ITextTransformer(ABC):
+
+    @abstractmethod
+    def transform(self, source_text: str) -> str:
+        pass
