@@ -1,8 +1,14 @@
 from abc import ABC, abstractmethod
 from typing import List
 
+class ITransformer(ABC):
 
-class IFileTransformer(ABC):
+    @property
+    @abstractmethod
+    def rules(self) -> List[ISubstitutionRule]:
+        pass
+
+class IFileTransformer(ITransformer):
 
     @property
     @abstractmethod
@@ -35,15 +41,6 @@ class ISubstitutionRule(ABC):
     @abstractmethod
     def maximum_repeat_count(self) -> int:
         pass
-
-
-class ITransformer(ABC):
-
-    @property
-    @abstractmethod
-    def rules(self) -> List[ISubstitutionRule]:
-        pass
-
 
 class ITextTransformer(ABC, ITransformer):
 
