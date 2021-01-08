@@ -5,7 +5,7 @@ class TransformerCLI:
     def __init__(self, transformer: interfaces.IFileTransformer):
         self._transformer = transformer
 
-    def run(self, args: list):
+    def run(self, *args):
         sourcePath = args[0]
         targetPath = args[1]
         self._transformer.transform(sourcePath, targetPath)
